@@ -113,7 +113,7 @@ export const historyDetail = (hcid, options = {}) => {
  * Delete Comment
  * @param {String} cid
  */
-export const del = (cid) => {
+export const remove = (cid) => {
   return request({
     path: "/api/fresns/v1/comment/" + cid,
     method: "DELETE",

@@ -88,7 +88,7 @@ export const markAsRead = (uidOrUsername, options = {}) => {
  * @param {Object} options
  * @return {wx.RequestTask}
  */
-export const del = (uidOrUsername, options = {}) => {
+export const remove = (uidOrUsername, options = {}) => {
   return request({
     path: "/api/fresns/v1/conversation/" + uidOrUsername,
     method: "DELETE",

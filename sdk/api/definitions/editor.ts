@@ -22,26 +22,16 @@ export const configs = (type) => {
  * @param {String} type post, comment
  * @param {Object} formData
  */
-// Jevan Note: api
-// publish: async (type, formData) => {
-//   if (formData.image) {
-//     return uploadFile({
-//       path: '/api/fresns/v1/editor/' + type + '/publish',
-//       method: 'POST',
-//       data: {
-//         ...formData,
-//       },
-//     });
-//   }
-//
-//   return request({
-//     path: '/api/fresns/v1/editor/' + type + '/publish',
-//     method: 'POST',
-//     data: {
-//       ...formData,
-//     },
-//   });
-// },
+export const publish = async (type, formData) => {
+  return request({
+    path: '/api/fresns/v1/editor/' + type + '/publish',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+    data: formData,
+  })
+}
 
 /**
  * Edit Post or Comment
@@ -149,7 +139,7 @@ export const draftRecall = (type, did) => {
  * @param {String} type post, comment
  * @param {String} did
  */
-export const draftDelete = (type, did) => {
+export const draftRemove = (type, did) => {
   return request({
     path: "/api/fresns/v1/editor/" + type + "/draft/" + did,
     method: "DELETE",

@@ -143,7 +143,7 @@ export const historyDetail = (hpid, options) => {
  * Delete Post
  * @param {String} pid
  */
-export const del = (pid: string) => {
+export const remove = (pid: string) => {
   return request({
     path: "/api/fresns/v1/post/" + pid,
     method: "DELETE",

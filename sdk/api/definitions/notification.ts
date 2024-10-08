@@ -38,7 +38,7 @@ export const markAsRead = (options = {}) => {
  * Delete Messages
  * @param {Object} options
  */
-export const del = (options = {}) => {
+export const remove = (options = {}) => {
   return request({
     path: "/api/fresns/v1/notification/messages",
     method: "DELETE",
